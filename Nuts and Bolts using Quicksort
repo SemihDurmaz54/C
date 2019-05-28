@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include<stdlib.h>
+#include<time.h>
+
+int SortArray(int *Array, int left, int right, int random){
+    int temp,templ,tempr;
+    if(left<right)
+    	{
+        templ=left;
+        tempr=right;
+        
+        while(templ<tempr){
+            while(random>Array[templ])
+                templ++;
+            while(random<Array[tempr])
+                tempr--;
+        temp=Array[templ];
+        Array[templ]=Array[tempr];
+        Array[tempr]=temp;
+        }
+   }
+    return templ;
+}
+void Match(int *keyArray,int *lockArray,int left, int right) {
+ int difference=right-left;
+ int pivot;
+ int random;
+ srand((unsigned) time(NULL));
+
+ if(difference>0){
+
+    random=keyArray[(rand()%difference)+left];
+    pivot=SortArray(lockArray,left,right,random);
+    SortArray(keyArray,left,right,lockArray[pivot]);
+     
+    Match(keyArray,lockArray,left,pivot-1);
+    Match(keyArray,lockArray,pivot+1,right);
+    }
+}
+int main() {
+   
+    int arraySize,Key[25],Lock[25],i;
+    printf("Enter the size of the array:\n");scanf("%d",&arraySize);
+    for(i=0;i<arraySize;i++){printf("Enter the %d.element of Key Array:",i+1);scanf("%d",&Key[i]);}printf("\n");
+    for(i=0;i<arraySize;i++){printf("Enter the %d.element of Lock Array:",i+1);scanf("%d",&Lock[i]);}
+    
+    Match(Lock,Key,0,arraySize-1);
+    
+    printf("\nSorted Key Array:\n");for(i=0;i<arraySize;i++){printf("%d  ",Key[i]);}
+	printf("\nSorted Lock Array:\n");for(i=0;i<arraySize;i++){printf("%d  ",Lock[i]);}
+    return 0;
+}
