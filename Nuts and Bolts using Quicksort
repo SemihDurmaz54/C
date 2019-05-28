@@ -34,9 +34,10 @@ void Match(int *keyArray,int *lockArray,int left, int right) {
     SortArray(keyArray,left,right,lockArray[pivot]);
      
     Match(keyArray,lockArray,left,pivot-1);
-    Match(keyArray,lockArray,pivot+1,right); //
+    Match(keyArray,lockArray,pivot+1,right);
     }
 }
+
 int main() {
    
     int arraySize,Key[25],Lock[25],i;
