@@ -1,1 +1,1 @@
-fo find if the number is prime or not
+fo find if the number is prime or not.
