@@ -1,1 +1,1 @@
-.
+Notu düzenle
