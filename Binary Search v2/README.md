@@ -1,3 +1,3 @@
 Notu düzenle
 
-Türkçe ve ingilizce açıklama metini yaz
+Türkçe ve ingilizce için ayrı ayrı açıklama metini yaz
