@@ -6,7 +6,7 @@ int main(){
 	printf("Dizi boyutu : ");scanf("%d",&N);
 	printf("Aranacak sayiyi giriniz : ");scanf("%d",&X);
 	
-	for(int i = 0; i < N; i++){ //
+	for(int i = 0; i < N; i++){
 		printf("%d. eleman : ",i+1);
 		scanf("%d",&A[i]);
 	}
