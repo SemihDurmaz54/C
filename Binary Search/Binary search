@@ -25,5 +25,5 @@ int main(){
 	else
 		printf("%d. gözde bulundu",ic);
 
-	return 0;
+	return 0; //
 }
